@@ -1,0 +1,351 @@
+{% extends "Assets/anti/baseEFCC.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<h5><a href="{% url 'displayefcc' %}" class="btn btn-outline-success ">Back To EFCC</a></h5>
+               <div class="article-metadata">
+                   <h2 class="text-danger"> <b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                       DECLARANT WATCH</b></h2><br>
+                   <table class="table">
+                      <thead>
+                        <tr>
+                            <th><h6><b>Declarant ID</b></h6></th>
+                            <th><h6><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Surname</b></h6></th>
+                            <th><h6><b>Middle Name</b></h6></th>
+                            <th><h6><b> Other Names</b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                            <td><h6>{{ object.declarant_id  }}</h6></td>
+                            <td><h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ object.surname }}</h6></td>
+                            <td><h6>{{ object.middle_name }}</h6></td>
+                            <td><h6>{{ object.other_names }}</h6></td>
+                        </tr>
+                       </tbody>
+                   </table>
+                   <table class="table">
+                         <thead>
+                        <tr>
+                            <th><h6><b>File Number</b></h6></th>
+                            <th><h6><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Date of Birth</b></h6></th>
+                            <th><h6><b>Qualification</b></h6></th>
+                            <th><h6><b>&nbsp&nbsp&nbsp&nbsp Cadre</b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                            <td><h6>{{ object.file_number  }}</h6></td>
+                            <td><h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ object.date_ob }}</h6></td>
+                            <td><h6>{{  object.qualification }}</h6></td>
+                            <td><h6>{{ object.cadre }}</h6></td>
+                        </tr>
+                       </tbody>
+                   </table>
+                   <table class="table">
+                        <thead>
+                        <tr>
+                            <th><h6><b>Current Year</b></h6></th>
+                            <th><h6><b> Rank at First Appt.</b></h6></th>
+                            <th><h6><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Date of First Appt.</b></h6></th>
+                            <th><h6><b>Age at First Appt.</b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                            <td><h6>{{ object.curr_year }}</h6></td>
+                            <td><h6>{{ object.rank_at_FAPPT }}</h6></td>
+                            <td><h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ object.date_of_FAPPT }}</h6></td>
+                            <td><h6>{{ object.age_at_fa }} Years</h6></td>
+                        </tr>
+                       </tbody>
+                   </table>
+                   <table class="table">
+                       <thead>
+                        <tr>
+                            <th><h6><b>Date of Confirmation</b></h6></th>
+                            <th><h6><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Rank at Last Appt.</b></h6></th>
+                            <th><h6><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Date of Last Appt.</b></h6></th>
+                            <th><h6><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Rank at Present Appt.</b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                             <td><h6>{{ object.date_of_confirmation }}</h6></td>
+                            <td><h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ object.rank_at_LAPPT }}</h6></td>
+                            <td><h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ object.date_of_LAPPT }}</h6></td>
+                            <td><h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ object.rank_at_PAPPT }}</h6></td>
+                        </tr>
+                       </tbody>
+                   </table>
+                    <table class="table">
+                       <thead>
+                        <tr>
+                            <th><h6><b>Date of Present Appt.</b></h6></th>
+                            <th><h6><b>Number of Years in Service</b></h6></th>
+                            <th><h6><b>Number of Years Put in Service</b></h6></th>
+                            <th><h6><b>Year of Retirement</b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                            <td><h6>{{ object.date_of_PAPPT }}</h6></td>
+                            <td><h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ object.Num_Of_YIS }} Years</h6></td>
+                            <td><h6>{{ object.Num_Of_YPIS }} Years</h6></td>
+                            <td><h6>{{ object.year_OR }} </h6></td>
+                        </tr>
+                       </tbody>
+                   </table>
+                   <table class="table">
+                       <thead>
+                        <tr>
+                            <th><h6><b>Age of Retirement</b></h6></th>
+                              <th><h6><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Retiring with Age</b></h6></th>
+                            <th><h6><b>Retiring with Years in Service</b></h6></th>
+                            <th><h6><b>Year of First Declaration</b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+
+                        <td><h6>{{ object.age_OR }} Years</h6></td>
+                             <td><h6>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ object.retiring_at_60 }}</h6></td>
+                            <td><h6>{{ object.retiring_at_35 }}</h6></td>
+                            <th><br>{{object.supposed_year_to_declare1}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_1st_declaration  }}</b></h6></b></b></h6></th>
+                        </tr>
+                       </tbody>
+                   </table>
+                   <table class="table">
+                       <thead>
+                        <tr>
+                            <th><h6><b>Year of Second Declaration</b></h6></th>
+                            <th><h6><b>Year of Third Declaration</b></h6></th>
+                            <th><h6><b>Year of Fourth Declaration</b></h6></th>
+                            <th><h6><b>Year of Fifth Declaration</b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                            <th><br>{{object.supposed_year_to_declare2}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_2nd_declaration  }}</b></h6></b></b></h6></th>
+                            <th><br>{{object.supposed_year_to_declare3}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_3rd_declaration  }}</b></h6></b></b></h6></th>
+                            <th><br>{{object.supposed_year_to_declare4}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_4th_declaration  }}</b></h6></b></b></h6></th>
+                            <th><br>{{object.supposed_year_to_declare5}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_5th_declaration  }}</b></h6></b></b></h6></th>
+                        </tr>
+                       </tbody>
+                   </table>
+
+                    <table class="table">
+                       <thead>
+                        <tr>
+                            <th><h6><b>Year of Sixth Declaration</b></h6></th>
+                            <th><h6><b>Year of Seventh Declaration</b></h6></th>
+                            <th><h6><b>Year of Eight Declaration</b></h6></th>
+                            <th><h6><b>Year of Ninth Declaration</b></h6></th>
+                            <th><h6><b> </b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                            <th><br>{{object.supposed_year_to_declare6}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_6th_declaration  }}</b></h6></b></b></h6></th>
+                            <th><br>{{object.supposed_year_to_declare7}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_7th_declaration  }}</b></h6></b></b></h6></th>
+                           <th><br>{{object.supposed_year_to_declare8}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_8th_declaration  }}</b></h6></b></b></h6></th>
+                            <th><br>{{object.supposed_year_to_declare9}}<h6 class="text-danger"><b>actual year declared :  {{ object.year_of_9th_declaration  }}</b></h6></b></b></h6></th>
+                            <td><h6></h6></td>
+                        </tr>
+                       </tbody>
+                   </table>
+                    <table class="table">
+                       <thead>
+                        <tr>
+                            <th><h6><b>Number of Times To Declare</b></h6></th>
+                            <th><h6><b>Number of Times Declared</b></h6></th>
+                            <th><br><b>Number of Times Defaulted</br><h6 class="text-danger"><b>(Until Verified)</b></h6></b></b></h6></th>
+                            <th><h6><b> </b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                            <td><h6>{{ object.Num_Of_Times_To_declare  }}</h6></td>
+                            <td><h6>{{ object.Num_Of_Times_declared }}</h6></td>
+                            <td><h6>{{ object.Num_Of_Times_defaulted }}</h6></td>
+                            <td><h6></h6></td>
+                        </tr>
+                       </tbody>
+                   </table>
+
+                   <hr style="width:120%;height:10px;border-width:20;color:gray;background-color:lightgray">
+
+                    <h2 class="text-danger"> <b>
+                       ACTION TAKEN</b></h2>
+                    <h5>{{ object.action_taken  }}</h5>
+
+                   <hr style="width:120%;height:10px;border-width:20;color:gray;background-color:lightgray">
+                   <h2 class="text-danger"> <b>
+                       FORM LOCATION</b></h2>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th><h6><b>Envelop Number </b></h6></th>
+                            <th><h6><b>Box Number</b></h6></th>
+                       </tr>
+                      </thead>
+                       <tbody>
+                        <tr class="table-success">
+                            <td><h6>{{ object.envelop_number  }}</h6></td>
+                            <td><h6>{{ object.box_number  }}</h6></td>
+                        </tr>
+                       </tbody>
+                       </table>
+
+                   <hr style="width:120%;height:10px;border-width:20;color:gray;background-color:lightgray">
+                   <h2 class="text-danger"> <b>
+                      INTEL</b></h2><br>
+                   <h5>{{ object.investigation_activities  }}</h5>
+                   <hr style="width:120%;height:10px;border-width:20;color:gray;background-color:lightgray">
+               </div>
+
+                  <h2 class="text-danger"> <b>
+                       DECLARANT PARTICULARS / ASSETS DECLARED</b></h2><br><br>
+               {% if postsefcc.front_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.front_img.url }}">
+                {% endif %}
+
+                {% if postsefcc.declarant_part_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.declarant_part_img.url }}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                {% endif %}
+
+                {% if postsefcc.particular_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.particular_img.url }}"></br></br>
+                {% endif %}
+
+                {% if postsefcc.banks_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.banks_img.url }}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                {% endif %}
+
+                {% if postsefcc.buildings_and_lands_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.buildings_and_lands_img.url }}"></br></br>
+                {% endif %}
+
+                {% if postsefcc.farms_and_enter_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.farms_and_enter_img.url }}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                 {% endif %}
+
+               {% if postsefcc.vehicles_and_household_items_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.vehicles_and_household_items_img.url }}"></br></br>
+                {% endif %}
+
+                {% if postsefcc.spouse_children_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.spouse_children_img.url }}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                {% endif %}
+
+               {% if postsefcc.bonds_shares_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.bonds_shares_img.url }}"></br></br>
+                {% endif %}
+
+               {% if postsefcc.court_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.court_img.url }}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                {% endif %}
+
+                {% if postsefcc.acknow_slip_img %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.acknow_slip_img.url }}"></br></br>
+               {% endif %}
+
+                 {% if postsefcc.add_img_1 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_1.url }}"></br></br>
+               {% endif %}
+
+                 {% if postsefcc.add_img_2 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_2.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_3 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_3.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_4 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_4.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_5 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_5.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_6 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_6.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_7 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_7.url }}"></br></br>
+               {% endif %}
+
+                {% if postsefcc.add_img_8 %}
+               <img  style="width:300px;height:200px;" src="{{ postsccb.add_img_8.url }}"></br></br>
+               {% endif %}
+
+                 {% if postsefcc.add_img_9 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_9.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_10 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_10.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_11 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_11.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_12 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_12.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_13 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_13.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_14 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_14.url }}"></br></br>
+               {% endif %}
+
+               {% if postsefcc.add_img_15 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_15.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_16 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_16.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_17 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_17.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_18 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_18.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_19 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_19.url }}"></br></br>
+               {% endif %}
+
+
+                 {% if postsefcc.add_img_20 %}
+               <img  style="width:300px;height:200px;" src="{{ postsefcc.add_img_20.url }}"></br></br>
+               {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,109 @@
+{% extends "Assets/pres/basePresident.html"%}
+{% block content %}
+{% load static %}
+
+
+	<div id="colorlib-page">
+		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
+		<aside id="colorlib-aside" role="complementary" class="js-fullheight" style="background-color:;">
+			<img style="width:150px;height:130px;" src="{% static 'img/portfolio/ccb.jpeg' %}" alt="" class="img-fluid"><br><br><br>
+			<br><br><br><br><br><br><br>
+			<div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Click to go home</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton dropdown-menu-right">
+
+					<a href="{% url 'Assets-welcome' %}" class="btn btn-success">Home</a>
+                    </div>
+                    </div>
+
+			<div class="colorlib-footer">
+
+				<p class="pfooter"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <b> Fitzpath Nigeria Limited</b>
+	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+			</div>
+		</aside> <!-- END COLORLIB-ASIDE -->
+		<div id="colorlib-main">
+			<section class="ftco-section ftco-no-pt ftco-no-pb">
+	    	<div class="container">
+	    		<div class="row d-flex">
+	    			<div class="col-xl-8 py-5 px-md-5">
+	    				<div class="row pt-md-4">
+			    			<div class="col-md-12">
+									<div class="blog-entry ftco-animate d-md-flex">
+										<a href="single.html" class="img img-2" style="background-image: url(images/image_1.jpg);"></a>
+										<div class="text text-2 pl-md-4">
+											<h5 class="mb-3"><a href="{% url 'displayccb' %}">Code Of Conduct Bureau</a></h5>
+				                            <h5 class="mb-3"><a href="#">National Identity Management Commission</a></h5>
+							                <h5 class="mb-3"><a href="#">Federal Road Safety Corps</a></h5>
+							                <h5 class="mb-3"><a href="#"> Nigerian Christian Pilgrim Commission</a></h5>
+											<h5 class="mb-3"><a href="#">National Energy Council </a></h5>
+											<h5 class="mb-3"><a href="#"> National Hajj Commission of Nigeria</a></h5>
+											<h5 class="mb-3"><a href="#"> National Lottery Trust Fund</a></h5>
+											<h5 class="mb-3"><a href="#">National Agency for the Control of Aids </a></h5>
+											<h5 class="mb-3"><a href="#">Nigeria National Merit Award </a></h5>
+											<h5 class="mb-3"><a href="#">National Lottery Regulatory Commission </a></h5>
+											<h5 class="mb-3"><a href="#"> Bureau of Public Enterprises</a></h5>
+											<h5 class="mb-3"><a href="#">Nigeria Atomic Energy Commission </a></h5>
+											<h5 class="mb-3"><a href="#"> National Agency for the Control of Aids</a></h5>
+											<h5 class="mb-3"><a href="#">New Partnership for African Development </a></h5>
+											<h5 class="mb-3"><a href="#"> National Commission for Refugees</a></h5>
+											<h5 class="mb-3"><a href="#">ServiCom </a></h5>
+											<h5 class="mb-3"><a href="#">Federal Character Commission </a></h5>
+											<h5 class="mb-3"><a href="#"> Mobilization, Allocation & Fiscal Commission</a></h5>
+											<h5 class="mb-3"><a href="#"> Nigerian Extractive Industries Transparency Initiative (NEITI)</a></h5>
+											<h5 class="mb-3"><a href="#"> Infrastructure Concession Regulatory Commission (ICRC)</a></h5>
+											<h5 class="mb-3"><a href="#"> National Salaries, Incomes and Wages Commission</a></h5>
+											<h5 class="mb-3"><a href="#"> National Pension Commission</a></h5>
+											<h5 class="mb-3"><a href="#"> Border Communities Development Agency</a></h5>
+
+
+				            </div>
+									</div>
+								</div>
+			    		</div><!-- END-->
+			    		<div class="row">
+
+			        </div>
+			    	</div>
+	    			<div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
+	            <div class="sidebar-box ftco-animate">
+	            	<h3 class="sidebar-heading">Categories</h3>
+	              <ul class="categories">
+					<li><a href="{% url 'anti' %}">ANTI-CORRUPTION <span>(3)</span></a></li>
+	                <li><a href="{% url 'pres' %}">EXECUTIVE BODIES <span>(23)</span></a></li>
+	                <li><a href="#">MINISTRIES <span>()</span></a></li>
+	                <li><a href="#">DEPARTMENTS AND AGENCIES <span>()</span></a></li>
+                    <li><a href="#">POLITICAL <span>()</span></a></li>
+	                <li><a href="#">UNCATEGORIZED  <span>()</span></a></li>
+	              </ul>
+	            </div>
+	          </div><!-- END COL -->
+	    		</div>
+	    	</div>
+	    </section>
+		</div><!-- END COLORLIB-MAIN -->
+	</div><!-- END COLORLIB-PAGE -->
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+
+{% endblock content %}

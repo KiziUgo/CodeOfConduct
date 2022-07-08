@@ -1,0 +1,16 @@
+{% extends "Assets/anti/baseCCB.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<h5><a href="{% url 'displayccb' %}" class="btn btn-outline-success ">Back To CCB</a></h5><br>
+<h2>This is the results of your search</h2>
+{% for post in querysetc %}
+    <a href="{{ post.get_absolute_url }}">{{ post.surname }}</a>
+    <a href="{{ post.get_absolute_url }}">{{ post.middle_name }}</a>
+    <a href="{{ post.get_absolute_url }}">{{ post.other_names }}</a>
+    <a href="{{ post.get_absolute_url }}">{{ post.date_of_PAPPT_rank}}</a>
+    <br/>
+{% endfor %}
+
+{% endblock content %}

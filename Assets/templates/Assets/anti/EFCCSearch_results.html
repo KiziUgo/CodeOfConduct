@@ -1,0 +1,15 @@
+{% extends "Assets/anti/baseEFCC.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h5><a href="{% url 'displayefcc' %}" class="btn btn-outline-success ">Back To EFCC</a></h5><br>
+<h2>This is the results of your search</h2>
+{% for post in querysetes %}
+    <a href="{{ post.get_absolute_url }}">{{ post.surname }}</a>
+    <a href="{{ post.get_absolute_url }}">{{ post.middle_name }}</a>
+    <a href="{{ post.get_absolute_url }}">{{ post.other_names }}</a>
+    <a href="{{ post.get_absolute_url }}">{{ post.date_of_PAPPT_rank}}</a>
+    <br/>
+{% endfor %}
+
+{% endblock content %}

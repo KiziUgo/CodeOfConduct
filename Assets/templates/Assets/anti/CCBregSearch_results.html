@@ -1,0 +1,18 @@
+{% extends "Assets/anti/baseCCBReg.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+ <h5><a href="{% url 'displayccb' %}" class="btn btn-outline-success ">Back To CCB</a></h5><br>
+{% for post in querysetcr %}
+<h2>Results for {{ post.name }}</h2>
+    Declarant ID:  <a href="{{ post.get_absolute_url }}">{{ post.declarant_ID }}</a><br>
+    Full Name:  <a href="{{ post.get_absolute_url }}">{{ post.name }}</a><br>
+    Rank:  <a href="{{ post.get_absolute_url }}">{{ post.rank }}</a><br>
+    Date Issued: <a href="{{ post.get_absolute_url }}">{{ post.date_issued }}</a><br>
+    Date Sworn To:<a href="{{ post.get_absolute_url }}">{{ post.date_sworn_to}}</a><br>
+    Date Recieved: <a href="{{ post.get_absolute_url }}">{{ post.date_recieved}}</a><br>
+    <br />
+{% endfor %}
+
+{% endblock content %}
